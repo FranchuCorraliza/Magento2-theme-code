@@ -1,0 +1,69 @@
+<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('cabecera_pres_cocinas')->toHtml(); ?>
+<form data-mage-init='{"validation": {}}' action="<?php echo $block->getUrl('sendmail/'); ?>" method="post" id="form-validate" class="form form-cart" >
+	<div class="configurador_mobiliario">
+		<div class="inputgroup fullwidth">
+			<?php echo __('Datos del cliente'); ?>
+		</div>
+		<div class="inputgroup field required control">
+			<input type="text" data-validate="{required:true}" id="nombre" name="nombre" placeholder="<?php echo __('Nombre'); ?>" />
+		</div>
+		<div class="inputgroup field required control">
+			<input type="text" data-validate="{required:true}" id="telefono" name="telefono" placeholder="<?php echo __('Teléfono'); ?>" />
+		</div>
+		<div class="inputgroup field required control">
+			<input type="text" id="email" data-validate="{required:true}" name="email" placeholder="<?php echo __('Email'); ?>" />
+		</div>
+		<div class="inputgroup fullwidth">
+			<?php echo __('Datos de la vivienda'); ?>
+		</div>
+		<div class="inputgroup field required control">
+			<input type="text" data-validate="{required:true}" id="promocion" name="promocion" placeholder="<?php echo __('Promoción'); ?>" />
+		</div>
+		<div class="inputgroup field required control">
+			<input type="text" data-validate="{required:true}" id="planta" name="planta" placeholder="<?php echo __('Planta'); ?>" />
+		</div>
+		
+		<div class="inputgroup field required control">
+			<input type="text" data-validate="{required:true}" id="bloque" name="bloque" placeholder="<?php echo __('Bloque'); ?>" />
+		</div>
+		<div class="inputgroup field required control">
+			<input type="text" data-validate="{required:true}" id="puerta" name="puerta" placeholder="<?php echo __('Puerta'); ?>" />
+		</div>
+		<div class="inputgroup field required control">
+			<input type="text" data-validate="{required:true}" id="escalera" name="escalera" placeholder="<?php echo __('Escalera'); ?>" />
+		</div>
+		<div class="inputgroup field required control">
+			<input type="text" data-validate="{required:true}" id="cp" name="cp" placeholder="<?php echo __('Código postal'); ?>" />
+		</div>
+		<div class="inputgroup field required control">
+			<select class="custom-select mr-sm-2"  id="conocer" name="conocer">
+				<option selected><?php echo __('¿Cómo nos conoció?'); ?></option>
+		        <option value="Folletos"><?php echo __('Folletos'); ?></option>
+		        <option value="Promotora"><?php echo __('Promotora'); ?></option>
+		        <option value="Caseta"><?php echo __('Caseta de obra'); ?></option>
+		        <option value="Redes"><?php echo __('Redes sociales'); ?></option>
+			</select>
+		</div>
+		<div class="inputgroup fullwidth">
+			<?php echo __('Comentarios sobre el presupuesto'); ?>
+		</div>
+		<div class="inputgroupcien">
+			<textarea id="comentario" name="comentario"  placeholder="<?php echo __('Comentario'); ?>"></textarea>
+		</div>
+		<div class="inputgroup">
+			<button type="submit" class="enviarformpresu"><?php echo __('Enviar solicitud'); ?></button>
+		</div>
+	</div>
+</form>
+<label class="requiredfiedls">*<?php echo __('Campos requeridos'); ?></label>
+<script type="text/javascript">
+require([
+    'jquery',
+    'mage/mage'
+], function($){
+ 
+   var dataForm = $('#form-validate');
+   dataForm.mage('validation', {});
+ 
+});
+</script>
